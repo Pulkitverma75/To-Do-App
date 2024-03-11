@@ -1,0 +1,45 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    width: 100%;
+}
+
+#first {
+    height: 100%;
+    width: 100%;
+    padding: 0%;
+    background-color: rgb(12, 16, 39);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#bottomfirst {
+    height: 95%;
+    width: 80%;
+    background-color: #f7eec0;
+    border-radius: 15px;
+    overflow: hidden;
+
+}
+
+#innertop {
+    background-color: #C08261;
+    height: 10%;
+    width: 100%;
+    color: rgb(37, 31, 31);
+    text-align: center;
+    padding: 1rem;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#middle {
+    padding: 2rem;
+    font-family: Arial, Helvetica, sans-serif;
+}

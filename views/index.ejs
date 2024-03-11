@@ -1,0 +1,70 @@
+<%- include("./partials/header") %>
+<div id="first">
+  <div id="bottomfirst">
+    <div id="innertop">
+      <h2 class="fw-bold">To-Dos App</h2>
+    </div>
+    <div id="middle">
+      <div id="form">
+        <form action="/add/todo" method="POST">
+          <div class="mb-3">
+            <label for="title" class="form-label">Task</label>
+            <input
+              id="title"
+              type="text"
+              name="todo"
+              class="form-control"
+              placeholder="Enter Task"
+            />
+          </div>
+          <div class="mb-3">
+            <label for="description" class="form-label">Description</label>
+            <input
+              type="text"
+              name="description"
+              class="form-control"
+              id="description"
+              placeholder="Enter Description"
+            />
+          </div>
+          <button type="submit" class="btn btn-primary">Add Task</button>
+        </form>
+      </div>
+      <hr />
+      <div id="task-list" style="max-height: 400px; overflow-y: auto">
+        <h3 class="fw-bold">Listed Tasks :</h3>
+        <div class="table-responsive">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th scope="col">S.no</th>
+                <th scope="col">Task</th>
+                <th scope="col">Description</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% for(let i = 0; i < todos.length; i++) { %>
+              <tr>
+                <th scope="row"><%= i + 1 %></th>
+                <td><%= todos[i].todo %></td>
+                <td>
+                  <%= descriptions[i] ? descriptions[i].description : '' %>
+                </td>
+                <td>
+                  <a
+                    href="/delete/todo/<%= todos[i]._id %>"
+                    class="btn btn-danger btn-sm"
+                    >Delete</a
+                  >
+                </td>
+              </tr>
+              <% } %>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<%- include("./partials/footer") %>
